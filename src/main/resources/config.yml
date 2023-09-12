@@ -1,0 +1,32 @@
+# VitalMc Core configuration
+
+# Core License
+license: ""
+
+storage: # Storage Section
+  databases: # Databases (You can create how much databases you need)
+    main:
+      identifier: "database-main" # Database Identifier
+      host: "localhost:3306" # Database Host
+      database: "" # Database name
+      user: "" # Database user
+      password: "" # Database password
+    prison_storage:
+      identifier: "database-prison-storage" # Database Identifier
+      host: "localhost:3306" # Database Host
+      database: "" # Database name
+      user: "" # Database user
+      password: "" # Database password
+
+# Core Messages
+messages:
+  main_command:
+    - "&d&lVITALCORE"
+    - ""
+    - "&b/vitalcore list &7- Show loaded vital plugins."
+    - "&b/vitalcore info <plugin> &7- Show a vital plugin info."
+  plugin_info:
+    - "&e&lPLUGIN INFO"
+    - ""
+    - "&fName: {name}"
+    - "&fVersion: &b{version}"

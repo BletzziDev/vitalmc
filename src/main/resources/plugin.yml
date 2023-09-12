@@ -1,0 +1,7 @@
+name: VitalCore
+version: '${project.version}'
+main: com.nasquicode.vitalcore.bukkit.Terminal
+api-version: 1.19
+authors: [Bletzzi]
+description: VitalMC Core System
+website: nasquicode.com
