@@ -1,5 +1,6 @@
 package com.nasquicode.vitalcore.bukkit.utils;
 
+import com.nasquicode.vitalcore.bukkit.Terminal;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -19,8 +20,7 @@ public class CustomFileConfiguration extends YamlConfiguration {
     /**
      * Create/get a configuration from the plugin folder
      *
-     * @param name   The configuration file name, without {@code .yml} at the end
-     * @param plugin An instance of your plugin
+     * @param name The configuration file name, without {@code .yml} at the end
      * @throws IOException                   Failed to create de configuration file
      * @throws InvalidConfigurationException The configuration file represents an invalid YAML Configuration
      */
