@@ -1,8 +1,11 @@
 package com.nasquicode.vitalcore.bukkit;
 
+import com.nasquicode.vitalcore.bukkit.commands.VitalCore;
 import com.nasquicode.vitalcore.bukkit.licensing.LicenseServer;
 import com.nasquicode.vitalcore.bukkit.mappers.DatabaseMapper;
+import com.nasquicode.vitalcore.bukkit.mappers.PluginsMapper;
 import com.nasquicode.vitalcore.bukkit.misc.Constants;
+import com.nasquicode.vitalcore.bukkit.objects.Database;
 import com.nasquicode.vitalcore.bukkit.utils.Console;
 import com.nasquicode.vitalcore.bukkit.utils.CustomFileConfiguration;
 import org.bukkit.Bukkit;
@@ -50,12 +53,23 @@ public final class Terminal extends JavaPlugin {
             throw new RuntimeException(e);
         }
 
+        Console.log("&eRegistering commands and listeners...");
+        getCommand("vitalcore").setExecutor(new VitalCore());
+        Console.log("&aAll commands and listeners has been registered.");
+
+        Console.log("&eLoading Vital Plugins...");
+        PluginsMapper.load();
+        Console.log(String.format("&b%s vital plugins has been loaded.", String.valueOf(PluginsMapper.getPlugins().size())));
+
         loadPlugins();
         Console.log("&aPlugin initialized!");
     }
 
     @Override
     public void onDisable() {
+        for(Database database : DatabaseMapper.getDatabases().values()) {
+            database.closeConnection();
+        }
         Console.log("&cPlugin disabled!");
     }
     public void loadPlugins() {

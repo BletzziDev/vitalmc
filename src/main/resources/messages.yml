@@ -10,3 +10,4 @@ plugin_info:
   - ""
   - "&fName: {name}"
   - "&fVersion: &b{version}"
+no_permission: "&cYou can't use this command :c"

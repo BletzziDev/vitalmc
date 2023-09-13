@@ -15,14 +15,6 @@ public class Database {
     public Database(DatabaseInfo info) throws SQLException {
         this.info = info;
         connection = DriverManager.getConnection(String.format("jdbc:mysql://%s/%s?autoReconnect=true", info.getHOST(), info.getDATABASE()), info.getUSER(), info.getPASSWORD());
-        /*
-        if(info.getREQUIRE_SSL()) {
-            connection = DriverManager.getConnection(String.format("jdbc:mysql://%s/%s?autoReconnect=true&requireSSL=true", info.getHOST(), info.getDATABASE()),info.getUSER(),info.getPASSWORD());
-        }else {
-            Console.log(String.format("jdbc:mysql://%s/%s?autoReconnect=true", info.getHOST(), info.getDATABASE())+" outras info: "+info.getUSER()+" "+info.getPASSWORD());
-            connection = DriverManager.getConnection(String.format("jdbc:mysql://%s/%s", info.getHOST(), info.getDATABASE()), info.getUSER(), info.getPASSWORD());
-        }
-         */
     }
     public Boolean isConnected() {
         return connection != null;
