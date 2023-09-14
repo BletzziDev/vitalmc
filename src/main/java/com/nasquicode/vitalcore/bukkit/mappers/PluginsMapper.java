@@ -1,5 +1,6 @@
 package com.nasquicode.vitalcore.bukkit.mappers;
 
+import com.nasquicode.vitalcore.bukkit.Terminal;
 import com.nasquicode.vitalcore.bukkit.misc.Constants;
 import com.nasquicode.vitalcore.bukkit.objects.VitalPlugin;
 import com.nasquicode.vitalcore.bukkit.utils.Console;
@@ -17,8 +18,9 @@ public class PluginsMapper {
         for(String key : Constants.vitalPlugins) {
             if(Bukkit.getPluginManager().getPlugin(key) != null) {
                 VitalPlugin plugin = new VitalPlugin(
-                    key, Bukkit.getPluginManager().getPlugin(key)
+                        key, Bukkit.getPluginManager().getPlugin(key)
                 );
+                plugins.put(key,plugin);
             }
         }
     }

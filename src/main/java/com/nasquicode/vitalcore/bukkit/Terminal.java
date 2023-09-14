@@ -1,5 +1,6 @@
 package com.nasquicode.vitalcore.bukkit;
 
+import com.nasquicode.vitalcore.bukkit.api.VitalCoreAPI;
 import com.nasquicode.vitalcore.bukkit.commands.VitalCore;
 import com.nasquicode.vitalcore.bukkit.licensing.LicenseServer;
 import com.nasquicode.vitalcore.bukkit.mappers.DatabaseMapper;
@@ -18,6 +19,7 @@ import java.sql.SQLException;
 public final class Terminal extends JavaPlugin {
 
     public static Terminal instance;
+    public static VitalCoreAPI api = new VitalCoreAPI();
     public static CustomFileConfiguration config;
     public static CustomFileConfiguration messagesFile;
 
@@ -61,7 +63,7 @@ public final class Terminal extends JavaPlugin {
         PluginsMapper.load();
         Console.log(String.format("&b%s vital plugins has been loaded.", String.valueOf(PluginsMapper.getPlugins().size())));
 
-        loadPlugins();
+
         Console.log("&aPlugin initialized!");
     }
 
@@ -72,12 +74,12 @@ public final class Terminal extends JavaPlugin {
         }
         Console.log("&cPlugin disabled!");
     }
-    public void loadPlugins() {
-
-
-    }
     public void unloadPlugins() {
-        if(Bukkit.getPluginManager().getPlugin("VitalPets") != null) getPluginLoader().disablePlugin(Bukkit.getPluginManager().getPlugin("VitalPets"));
+        if(Bukkit.getPluginManager().isPluginEnabled("VitalPets")) getPluginLoader().disablePlugin(Bukkit.getPluginManager().getPlugin("VitalPets"));
         getPluginLoader().disablePlugin(this);
+    }
+
+    public VitalCoreAPI getAPI() {
+        return api;
     }
 }
