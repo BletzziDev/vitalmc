@@ -26,3 +26,13 @@ storage:
       # Database user
       user: ""
       # Database password
+
+# Economy formats
+formats:
+  - ""
+  - "K"
+  - "M"
+  - "B"
+  - "T"
+  - "Q"
+  - "QQ"

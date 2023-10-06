@@ -23,7 +23,7 @@ public class Heads
     public static ItemStack BLUE;
     
     static {
-    	Heads.BLUE = getSkull("http://textures.minecraft.net/texture/bef7b6829fc48758cb25ab93f28bf794d92ace0161f809a2aadd3bb12b23014");
+        Heads.BLUE = getSkull("http://textures.minecraft.net/texture/bef7b6829fc48758cb25ab93f28bf794d92ace0161f809a2aadd3bb12b23014");
         Heads.VERDE = getSkull("http://textures.minecraft.net/texture/361e5b333c2a3868bb6a58b6674a2639323815738e77e053977419af3f77");
         Heads.AMARELO = getSkull("http://textures.minecraft.net/texture/14c4141c1edf3f7e41236bd658c5bc7b5aa7abf7e2a852b647258818acd70d8");
         Heads.ROXO = getSkull("http://textures.minecraft.net/texture/e9352bcabfc27edb44ceb51b04786542f26a299a0529475346186ee94738f");

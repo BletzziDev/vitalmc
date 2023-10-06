@@ -75,8 +75,19 @@ public final class Terminal extends JavaPlugin {
         Console.log("&cPlugin disabled!");
     }
     public void unloadPlugins() {
-        if(Bukkit.getPluginManager().isPluginEnabled("VitalPets")) getPluginLoader().disablePlugin(Bukkit.getPluginManager().getPlugin("VitalPets"));
-        getPluginLoader().disablePlugin(this);
+        Console.log("");
+        Console.log("");
+        Console.log("");
+        Console.log("&cAutomatically shutting down the server in 30 seconds.");
+        Console.log("");
+        Console.log("");
+        Console.log("");
+        try {
+            Thread.sleep(30000);
+            Bukkit.getServer().shutdown();Bukkit.getServer().shutdown();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public VitalCoreAPI getAPI() {
